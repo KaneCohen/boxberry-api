@@ -74,7 +74,7 @@ class BoxberryApi implements ApiInterface
 
         $this->validator->validateValues($values, $constraint);
 
-        $class = __NAMESPACE__ . '\\Implementation\\' . ucfirst($type);
+        $class = __NAMESPACE__ . '\\Implementation\\Json';
         if (class_exists($class)) {
             $working_url = (true == $test) ? self::API_URL_TEST : self::API_URL;
             $this->impl = new $class($api_key, $working_url, $use_https);
