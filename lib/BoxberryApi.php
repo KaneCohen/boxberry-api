@@ -53,7 +53,6 @@ class BoxberryApi implements ApiInterface
 
         $values = [
             'api_key' => $api_key,
-            'type' => $type,
             'use_https' => $use_https,
             'test' => $test
         ];
