@@ -1,10 +1,10 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Exception;
+namespace Cohensive\BoxberryApi\Exception;
 
 /**
  * Interface ExceptionInterface
- * @package Morfin60\BoxberryApi\Exception
+ * @package Cohensive\BoxberryApi\Exception
  */
 interface ExceptionInterface
 {

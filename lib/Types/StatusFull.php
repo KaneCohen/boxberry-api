@@ -1,10 +1,10 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Types;
+namespace Cohensive\BoxberryApi\Types;
 
 /**
  * Class StatusFull
- * @package Morfin60\BoxberryApi\Types
+ * @package Cohensive\BoxberryApi\Types
  */
 class StatusFull extends Base
 {

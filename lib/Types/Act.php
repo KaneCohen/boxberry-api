@@ -1,6 +1,6 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Types;
+namespace Cohensive\BoxberryApi\Types;
 
 /**
  * Class containing information about act

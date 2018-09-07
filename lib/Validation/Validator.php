@@ -1,8 +1,8 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Validation;
+namespace Cohensive\BoxberryApi\Validation;
 
-use Morfin60\BoxberryApi\Exception\ValidationException;
+use Cohensive\BoxberryApi\Exception\ValidationException;
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -70,7 +70,7 @@ class Validator
      * Проверить период дат $from - $to. Даты должны быть в формате YYYYMMDD
      * @param string $from дата в формате YYYYMMDD
      * @param string $to дата в форматеYYYYMMDD
-     * @throws \Morfin60\BoxberryApi\Exception\ValidationException
+     * @throws \Cohensive\BoxberryApi\Exception\ValidationException
      */
     public function validatePeriod($from, $to)
     {
@@ -102,7 +102,7 @@ class Validator
     /**
      * Проверить массив с информацией о доставке
      * @param array $delivery_info ассоциативный массив, содержащий информацию о доставке
-     * @throws \Morfin60\BoxberryApi\Exception\ValidationException
+     * @throws \Cohensive\BoxberryApi\Exception\ValidationException
      */
     public function validateDeliveryInfo($delivery_info)
     {

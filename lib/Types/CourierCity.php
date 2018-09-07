@@ -1,6 +1,6 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Types;
+namespace Cohensive\BoxberryApi\Types;
 
 /**
  * @author Alexander N <morfin60@gmail.com

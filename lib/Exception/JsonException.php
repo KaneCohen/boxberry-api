@@ -1,8 +1,8 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Exception;
+namespace Cohensive\BoxberryApi\Exception;
 
-use Morfin60\BoxberryApi\Base\Exception;
+use Cohensive\BoxberryApi\Base\Exception;
 
 /**
  * Исключение JSON, вызываемое при неудаче разбора или сериализации из/в JSON

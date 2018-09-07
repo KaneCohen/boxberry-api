@@ -1,12 +1,12 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Base;
+namespace Cohensive\BoxberryApi\Base;
 
-use Morfin60\BoxberryApi\Exception\ExceptionInterface;
+use Cohensive\BoxberryApi\Exception\ExceptionInterface;
 
 /**
  * Class Exception
- * @package Morfin60\BoxberryApi\Base
+ * @package Cohensive\BoxberryApi\Base
  */
 class Exception extends \Exception implements ExceptionInterface
 {

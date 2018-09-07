@@ -1,8 +1,8 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Exception;
+namespace Cohensive\BoxberryApi\Exception;
 
-use Morfin60\BoxberryApi\Base\Exception;
+use Cohensive\BoxberryApi\Base\Exception;
 
 /**
  * Исключение, вызываемое при неудачной проверке входных аргументов, в $data хранится список нарушений валидации

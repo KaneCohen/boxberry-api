@@ -1,10 +1,10 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Implementation;
+namespace Cohensive\BoxberryApi\Implementation;
 
-use Morfin60\BoxberryApi\ApiInterface;
-use Morfin60\BoxberryApi\Exception\ApiException;
-use Morfin60\BoxberryApi\Exception\JsonException;
+use Cohensive\BoxberryApi\ApiInterface;
+use Cohensive\BoxberryApi\Exception\ApiException;
+use Cohensive\BoxberryApi\Exception\JsonException;
 
 /**
  * Класс, реализущий JSON интерфейс API Boxberry
@@ -38,9 +38,9 @@ class Json implements ApiInterface
     public function __construct($api_key, $api_url, $use_https)
     {
 
-        $url = (( true === $use_https)?'https':'http').'://'.$api_url;
+        $url = ((true === $use_https) ? 'https' : 'http') . '://' . $api_url;
 
-        $this->url = $url.'/json.php';
+        $this->url = $url . '/json.php';
         $this->api_key = $api_key;
         $this->client = new \GuzzleHttp\Client();
     }
@@ -51,6 +51,14 @@ class Json implements ApiInterface
     public function listCities()
     {
         return $this->sendRequest('ListCities');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function listCitiesFull()
+    {
+        return $this->sendRequest('ListCitiesFull');
     }
 
     /**
@@ -260,7 +268,7 @@ class Json implements ApiInterface
         if (array_key_exists('type', $options)) {
             $allowed_types = ['GET', 'POST'];
             if (!in_array($options['type'], $allowed_types)) {
-                throw new \InvalidArgumentException('Invalid request type '.$options['type']);
+                throw new \InvalidArgumentException('Invalid request type ' . $options['type']);
             } else {
                 $type = $options['type'];
             }
@@ -298,7 +306,7 @@ class Json implements ApiInterface
         //В случае неудачи разбора JSON кидаем исключение JsonException
         if (null === $data) {
             throw new JsonException(
-                'Failed to parse received json with message '.json_last_error_msg(),
+                'Failed to parse received json with message ' . json_last_error_msg(),
                 JsonException::DECODE_EXCEPTION,
                 null,
                 $json_data
@@ -307,8 +315,7 @@ class Json implements ApiInterface
         //Если API вернуло какую-то ошибку
         if (is_array($data)
             && isset($data[0])
-            && isset($data[0]->err)
-        ) {
+            && isset($data[0]->err)) {
             throw new ApiException(
                 'Errors occured while processing API request',
                 ApiException::API_ERROR,

@@ -1,22 +1,21 @@
 <?php
 
-namespace Morfin60\BoxberryApi;
+namespace Cohensive\BoxberryApi;
 
 use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Constraints as Assert;
 
-use Morfin60\BoxberryApi\Exception\ApiException;
-use Morfin60\BoxberryApi\Validation\Validator;
+use Cohensive\BoxberryApi\Exception\ApiException;
+use Cohensive\BoxberryApi\Validation\Validator;
 
 /**
- * Класс, реализующий JSON и SOAP API Boxberry
+ * Класс, реализующий JSON API Boxberry
  * @author Alexander N <morfin60@gmail.com
  * @package boxberry-api
  */
 class BoxberryApi implements ApiInterface
 {
     const API_JSON = 'json';
-    const API_SOAP = 'soap';
 
     const API_URL = 'api.boxberry.de';
     const API_URL_TEST = 'test.api.boxberry.de';
@@ -37,21 +36,19 @@ class BoxberryApi implements ApiInterface
     private $types;
 
     /**
-     * @var Morfin60\BoxberryApi\Validator\Validator
+     * @var Cohensive\BoxberryApi\Validator\Validator
      */
     private $validator;
 
     /**
      * @param string $api_key
-     * @param string|Morfin60\BoxberryApi\ApiInterface $type
+     * @param string|Cohensive\BoxberryApi\ApiInterface $type
      * @param bool $use_https
      * @param bool $test
      * @throws Exception\ValidationException
      */
-    public function __construct($api_key, $type = BoxberryApi::API_SOAP, $use_https = false, $test = false)
+    public function __construct($api_key, $use_https = true, $test = false)
     {
-        $this->types = [self::API_JSON, self::API_SOAP];
-
         $this->validator = new Validator();
 
         $values = [
@@ -67,10 +64,6 @@ class BoxberryApi implements ApiInterface
                     new Assert\NotNull(['message' => 'api_key should not be null']),
                     new Assert\Type(['type' => 'string', 'message' => 'api_key should be {{ type }}'])
                 ]),
-                'type' => new Assert\Required([
-                    new Assert\Type(['type' => 'string', 'message' => 'type should be {{ type }}']),
-                    new Assert\Choice(['choices' => $this->types, 'message' => 'type should be either JSON or SOAP'])
-                ]),
                 'use_https' => new Assert\Required([
                     new Assert\Type(['type' => 'bool', 'message' => 'use_https should be {{ type }}'])
                 ]),
@@ -82,7 +75,7 @@ class BoxberryApi implements ApiInterface
 
         $this->validator->validateValues($values, $constraint);
 
-        $class = __NAMESPACE__.'\\Implementation\\'.ucfirst($type);
+        $class = __NAMESPACE__ . '\\Implementation\\' . ucfirst($type);
         if (class_exists($class)) {
             $working_url = (true == $test) ? self::API_URL_TEST : self::API_URL;
             $this->impl = new $class($api_key, $working_url, $use_https);
@@ -99,6 +92,14 @@ class BoxberryApi implements ApiInterface
     public function listCities()
     {
         return $this->mapper->map($this->impl->listCities(), 'City');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function listCitiesFull()
+    {
+        return $this->mapper->map($this->impl->listCitiesFull(), 'City');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Morfin60\BoxberryApi\Mapper;
+namespace Cohensive\BoxberryApi\Mapper;
 
 /**
  * Класс, преобразующий stdObject в другой тип
@@ -22,20 +22,20 @@ class Mapper
     {
         $namespace = preg_replace('~^(.*)\\\\.*?$~isu', '\\1', __NAMESPACE__);
         $this->mappings = [
-            'City' => $namespace.'\\Types\\City',
-            'DeliveryPoint' => $namespace.'\\Types\\DeliveryPoint',
-            'Zip' => $namespace.'\\Types\\ZipCode',
-            'ZipDelivery' => $namespace.'\\Types\\ZipDelivery',
-            'Status' => $namespace.'\\Types\\Status',
-            'StatusFull' => $namespace.'\\Types\\StatusFull',
-            'Service' => $namespace.'\\Types\\Service',
-            'CourierCity' => $namespace.'\\Types\\CourierCity',
-            'DeliveryPrice' => $namespace.'\\Types\\DeliveryPrice',
-            'ParcelsPoint' => $namespace.'\\Types\\ParcelsPoint',
-            'PointDescription' => $namespace.'\\Types\\PointDescription',
-            'Parsel' => $namespace.'\\Types\\Parsel',
-            'Act' => $namespace.'\\Types\\Act',
-            'OrderBalance' => $namespace.'\\Types\\OrderBalance',
+            'City' => $namespace . '\\Types\\City',
+            'DeliveryPoint' => $namespace . '\\Types\\DeliveryPoint',
+            'Zip' => $namespace . '\\Types\\ZipCode',
+            'ZipDelivery' => $namespace . '\\Types\\ZipDelivery',
+            'Status' => $namespace . '\\Types\\Status',
+            'StatusFull' => $namespace . '\\Types\\StatusFull',
+            'Service' => $namespace . '\\Types\\Service',
+            'CourierCity' => $namespace . '\\Types\\CourierCity',
+            'DeliveryPrice' => $namespace . '\\Types\\DeliveryPrice',
+            'ParcelsPoint' => $namespace . '\\Types\\ParcelsPoint',
+            'PointDescription' => $namespace . '\\Types\\PointDescription',
+            'Parsel' => $namespace . '\\Types\\Parsel',
+            'Act' => $namespace . '\\Types\\Act',
+            'OrderBalance' => $namespace . '\\Types\\OrderBalance',
         ];
     }
 

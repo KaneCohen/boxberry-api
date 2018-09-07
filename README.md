@@ -1,2 +1,2 @@
 # boxberry-api
-Boxberry API implementation. Includes JSON and SOAP versions.
+Boxberry API implementation. Includes JSON version.

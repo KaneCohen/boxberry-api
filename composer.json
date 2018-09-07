@@ -1,11 +1,16 @@
 {
-    "name": "ecomlogic/boxberry-sdk",
+    "name": "cohensive/boxberry-api",
     "type": "library",
     "description": "Boxberry API implementation",
-    "keywords": ["API","JSON","SOAP"],
+    "keywords": ["API","JSON"],
     "homepage": "https://github.com/morfin60/boxberry-api",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Kane Cohen",
+            "email": "kanecohen@gmail.com",
+            "role": "Developer"
+        },
         {
             "name": "Alexander N",
             "email": "morfin60@gmail.com",
@@ -19,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Morfin60\\BoxberryApi\\": "lib"
+            "Cohensive\\BoxberryApi\\": "lib"
         }
     }
 }
