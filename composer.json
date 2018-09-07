@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Boxberry API implementation",
     "keywords": ["API","JSON"],
-    "homepage": "https://github.com/morfin60/boxberry-api",
+    "homepage": "https://github.com/kanecohen/boxberry-api",
     "license": "MIT",
     "authors": [
         {
