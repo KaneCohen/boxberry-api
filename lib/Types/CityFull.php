@@ -6,13 +6,13 @@ namespace Cohensive\BoxberryApi\Types;
  * Class City
  * @package Cohensive\BoxberryApi\Types
  */
-class City extends Base
+class CityFull extends Base
 {
     public $Name;
     public $Code;
 
     /**
-     * City constructor.
+     * CityFull constructor.
      * @param $object
      */
     public function __construct($object)

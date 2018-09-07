@@ -98,7 +98,7 @@ class BoxberryApi implements ApiInterface
      */
     public function listCitiesFull()
     {
-        return $this->mapper->map($this->impl->listCitiesFull(), 'City');
+        return $this->mapper->map($this->impl->listCitiesFull(), 'CityFull');
     }
 
     /**
